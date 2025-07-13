@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Now, Lust Later</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #5a3e36;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #fdf6f0 0%, #fdeef4 100%);
+            line-height: 1.8;
+        }
+        
+        section {
+            min-height: 100vh;
+            padding: 5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, #ffd6e7 0%, #ffc2d1 100%);
+            text-align: center;
+            color: #5a3e36;
+        }
+        
+        .petal {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50% 50% 0 50%;
+            animation: float 15s infinite ease-in-out;
+            opacity: 0.7;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        .title-container {
+            max-width: 800px;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5.5rem;
+            margin-bottom: 1.5rem;
+            color: #8c2f49;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            font-style: italic;
+            color: #6e3b58;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .scroll-btn {
+            background: rgba(255, 255, 255, 0.3);
+            color: #8c2f49;
+            border: 2px solid #8c2f49;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            backdrop-filter: blur(5px);
+        }
+        
+        .scroll-btn:hover {
+            background: #8c2f49;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(140, 47, 73, 0.3);
+        }
+        
+        /* Love Section */
+        #love {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="white" opacity="0.9"/><path d="M20,20 Q40,5 60,20 T100,20 Q85,40 100,60 T100,100 Q60,85 20,100 T0,100 Q5,60 0,20 T20,20 Z" fill="%23f8d7da" opacity="0.3"/></svg>');
+            background-size: 200px;
+        }
+        
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #8c2f49;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #e83e8c;
+            border-radius: 3px;
+        }
+        
+        .love-intro {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            line-height: 1.6;
+            color: #6e3b58;
+            padding: 1.5rem;
+            border-left: 3px solid #e83e8c;
+            background: rgba(255, 255, 255, 0.6);
+        }
+        
+        .reasons-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .reason-card {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(232, 62, 140, 0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+        }
+        
+        .reason-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reason-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(232, 62, 140, 0.2);
+        }
+        
+        .reason-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background: #e83e8c;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 8px rgba(232, 62, 140, 0.4);
+        }
+        
+        .reason-text {
+            font-size: 1.1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .heart-icon {
+            color: #e83e8c;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Lust Section */
+        #lust {
+            background: linear-gradient(135deg, #8c2f49 0%, #6e3b58 100%);
+            color: #fff0f5;
+        }
+        
+        #lust .section-title {
+            color: #ffd6e7;
+        }
+        
+        .shayari-container {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            padding: 2.5rem;
+            background: rgba(140, 47, 73, 0.3);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 214, 231, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shayari-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            pointer-events: none;
+        }
+        
+        .shayari {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .fantasy-list {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .fantasy-item {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            padding-left: 2.5rem;
+            position: relative;
+            text-align: left;
+        }
+        
+        .fantasy-item::before {
+            content: "❤";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #ffd6e7;
+            font-size: 1.5rem;
+        }
+        
+        /* Countdown Section */
+        #countdown {
+            background: linear-gradient(135deg, #6e3b58 0%, #4a2c40 100%);
+            color: #fff0f5;
+        }
+        
+        .countdown-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #ffd6e7;
+        }
+        
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .timer-unit {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem 1.5rem;
+            min-width: 120px;
+            text-align: center;
+            border: 1px solid rgba(255, 214, 231, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .timer-value {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #ffd6e7;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .timer-label {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .heartbeat {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            animation: pulse 2s infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 214, 231, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(255, 214, 231, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 214, 231, 0); }
+        }
+        
+        /* Final Section */
+        #final {
+            background: linear-gradient(135deg, #2c1b47 0%, #1a0d2e 100%);
+            color: #fff;
+            text-align: center;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 20px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 15px);
+            background-size: 80px 80px, 60px 60px;
+            background-position: 0 0, 30px 30px;
+        }
+        
+        .closing-message {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+            padding: 3rem;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        
+        .signature {
+            margin-top: 3rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: #ffd6e7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 4rem; }
+            .subtitle { font-size: 1.4rem; }
+            .section-title { font-size: 2.8rem; }
+            .love-intro { font-size: 1.8rem; }
+            .reason-card { padding: 1.2rem; }
+            .reason-text { font-size: 1rem; }
+            .shayari { font-size: 1.6rem; }
+            .fantasy-item { font-size: 1.1rem; }
+            .timer-unit { min-width: 90px; padding: 1.5rem 1rem; }
+            .timer-value { font-size: 2.5rem; }
+            .closing-message { font-size: 2rem; padding: 2rem; }
+        }
+        
+        @media (max-width: 480px) {
+            h1 { font-size: 3.2rem; }
+            .section-title { font-size: 2.2rem; }
+            .love-intro { font-size: 1.5rem; }
+            .reasons-container { grid-template-columns: 1fr; }
+            .shayari { font-size: 1.4rem; }
+            .fantasy-item { font-size: 1rem; padding-left: 1.8rem; }
+            .timer-container { gap: 1rem; }
+            .timer-unit { min-width: 70px; padding: 1.2rem 0.8rem; }
+            .timer-value { font-size: 2rem; }
+            .closing-message { font-size: 1.7rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="title-container">
+            <h1>Love Now, Lust Later</h1>
+            <p class="subtitle">“Horny pleasures will be pleased… but for now, handle my overflowing love.”</p>
+            <button class="scroll-btn" onclick="scrollToSection('love')">Scroll down to feel it all</button>
+        </div>
+    </section>
+
+    <!-- Love First Section -->
+    <section id="love">
+        <h2 class="section-title">Simran, My Every Heartbeat</h2>
+        <p class="love-intro">“Before I ever desire to touch your body, I want you to feel how madly, how deeply, how uncontrollably I'm in love with your soul.”</p>
+        
+        <div class="reasons-container">
+            <!-- Reasons will be added by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Lust Later Section -->
+    <section id="lust">
+        <h2 class="section-title">Your Desire Lives in My Devotion</h2>
+        
+        <div class="shayari-container">
+            <p class="shayari">
+                Tere honthon pe likhi hai meri khwahish,<br>
+                Tere seene mein dhadakti meri har saans hai,<br>
+                Tujhme utarna hai mujhe ishq ban kar,<br>
+                Jahan khatam ho har raag, meri wahan pyaas hai.
+            </p>
+            
+            <p class="shayari">
+                Tu sirf honton se nahi, dil se bhi choomti hai,<br>
+                Tere touch mein ishq bhi bheegta hai,<br>
+                Chahta hoon tujhe aise pyaar karun,<br>
+                Ke rooh bhi bol uthe — “Bas ab aur nahi.”
+            </p>
+        </div>
+        
+        <div class="fantasy-list">
+            <p class="fantasy-item">I want to kiss you without time watching us.</p>
+            <p class="fantasy-item">I want to touch you like worship, not urgency.</p>
+            <p class="fantasy-item">I want to trace your spine with whispers.</p>
+            <p class="fantasy-item">I want to make you beg with my breath, not my body.</p>
+            <p class="fantasy-item">I want to love you so slowly, even your soul gets goosebumps.</p>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="countdown">
+        <h2 class="countdown-title">Time left until I love you like poetry again:</h2>
+        <div class="timer-container">
+            <div class="timer-unit">
+                <div class="heartbeat"></div>
+                <div class="timer-value" id="days">00</div>
+                <div class="timer-label">Days</div>
+            </div>
+            <div class="timer-unit">
+                <div class="heartbeat"></div>
+                <div class="timer-value" id="hours">00</div>
+                <div class="timer-label">Hours</div>
+            </div>
+            <div class="timer-unit">
+                <div class="heartbeat"></div>
+                <div class="timer-value" id="minutes">00</div>
+                <div class="timer-label">Minutes</div>
+            </div>
+            <div class="timer-unit">
+                <div class="heartbeat"></div>
+                <div class="timer-value" id="seconds">00</div>
+                <div class="timer-label">Seconds</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section id="final">
+        <div class="closing-message">
+            “Simran, you are not just my girlfriend.<br>
+            You are the softness in my voice.<br>
+            The heartbeat I wait to hear.<br>
+            The kiss I write with every line.<br>
+            The lust I protect with love.<br>
+            I loved you from the first glance.<br>
+            But now… I live only to love you again.”
+            <div class="signature">Forever Yours</div>
+        </div>
+    </section>
+
+    <script>
+        // Create floating petals
+        function createPetals() {
+            const hero = document.getElementById('hero');
+            const petalCount = 15;
+            
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.classList.add('petal');
+                
+                // Random size
+                const size = Math.random() * 30 + 10;
+                petal.style.width = `${size}px`;
+                petal.style.height = `${size}px`;
+                
+                // Random position
+                petal.style.left = `${Math.random() * 100}%`;
+                petal.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation delay
+                petal.style.animationDelay = `${Math.random() * 5}s`;
+                
+                // Random rotation
+                petal.style.transform = `rotate(${Math.random() * 360}deg)`;
+                
+                hero.appendChild(petal);
+            }
+        }
+        
+        // Generate the 100 reasons
+        function generateReasons() {
+            const reasons = [
+                "The way you look at me when you're shy.",
+                "Your little tantrums when you're hungry.",
+                "Your sleepy voice in the morning.",
+                "Your smile when I compliment your eyes.",
+                "The way you hold me when I overthink.",
+                "Your voice — it's my favorite sound.",
+                "You giggle like magic.",
+                "You forgive me even when I act dumb.",
+                "You blush when I say I love you.",
+                "You get jealous, but it's so cute.",
+                "You're my safe place.",
+                "You care even when you're mad.",
+                "Your lips deserve poems.",
+                "Your skin is softer than any verse I could write.",
+                "You understand me like no one else.",
+                "You listen without judging.",
+                "You believe in me.",
+                "Your hugs fix me.",
+                "You calm my storms.",
+                "You make me want to be better.",
+                "You turn silence into comfort.",
+                "Your hands fit mine.",
+                "You remember the little things.",
+                "You say 'I'm proud of you.'",
+                "You look beautiful even when you're annoyed.",
+                "You make my worst days worth it.",
+                "I crave your presence more than touch.",
+                "You love my flaws.",
+                "You talk to me like I matter.",
+                "You make love feel divine.",
+                "You laugh at my dumb jokes.",
+                "You say my name with so much love.",
+                "You're mine in this chaotic world.",
+                "You get excited to see me.",
+                "You keep all my secrets.",
+                "You're the best listener.",
+                "You send good morning texts.",
+                "You call just to hear my voice.",
+                "You tease me in the most adorable way.",
+                "You give the tightest hugs.",
+                "You make time for me.",
+                "You remember my favorites.",
+                "You're curious about my dreams.",
+                "You never give up on me.",
+                "You stay, no matter what.",
+                "You say sorry even when it's not needed.",
+                "You love cuddling.",
+                "You make even silence feel romantic.",
+                "You're my softest habit.",
+                "You say 'I miss you' so genuinely.",
+                "You're honest, always.",
+                "You protect me.",
+                "You pray for me.",
+                "You look at me like I'm your world.",
+                "You let me be vulnerable.",
+                "You make me laugh when I want to cry.",
+                "You're not perfect, but you're perfect for me.",
+                "You share your pain with me.",
+                "You call me yours.",
+                "You choose me again and again.",
+                "You love me at my worst.",
+                "You make me feel wanted.",
+                "You're not afraid to be real.",
+                "You believe in forever with me.",
+                "You love my awkwardness.",
+                "You remind me to rest.",
+                "You check on me during the day.",
+                "You respect my space.",
+                "You make me feel handsome.",
+                "You're sexy without trying.",
+                "You want to build a future with me.",
+                "You talk about our babies.",
+                "You love slow kisses.",
+                "You want to grow old with me.",
+                "You're mine and only mine.",
+                "You love my scars.",
+                "You kiss like we're in a movie.",
+                "You're the fantasy and the reality.",
+                "You're my soft place to fall.",
+                "You're my muse.",
+                "You believe in our story.",
+                "You dance with me in private.",
+                "You love deep talks.",
+                "You hold my face when we kiss.",
+                "You say 'always' like a promise.",
+                "You let me take care of you.",
+                "You make me crave home — because you are home.",
+                "You understand my silence.",
+                "You say 'we' instead of 'I'.",
+                "You make me feel like I'm enough.",
+                "You get wet when I talk romantic.",
+                "You moan my name like it's a prayer.",
+                "You ask to be loved like art.",
+                "You beg for my touch but worship my heart.",
+                "You give meaning to my desire.",
+                "You make love deeper than lust.",
+                "You make me feel like I'm everything.",
+                "You kiss my soul.",
+                "You are my poetry.",
+                "You are, simply, mine."
+            ];
+            
+            const container = document.querySelector('.reasons-container');
+            
+            reasons.forEach((reason, index) => {
+                const card = document.createElement('div');
+                card.classList.add('reason-card');
+                card.innerHTML = `
+                    <div class="reason-number">${index + 1}</div>
+                    <p class="reason-text"><i class="heart-icon fas fa-heart"></i>${reason}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+        
+        // Scroll animation for reason cards
+        function setupScrollAnimations() {
+            const cards = document.querySelectorAll('.reason-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        }
+        
+        // Countdown timer
+        function setupCountdown() {
+            // Set your next meeting date here (YYYY, MM-1, DD, HH, MM)
+            const nextDate = new Date(2025, 6, 15, 13, 0); // August 15, 2025 at 7:00 PM
+            
+            function updateTimer() {
+                const now = new Date();
+                const diff = nextDate - now;
+                
+                if (diff <= 0) {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+                
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+        
+        // Smooth scroll to section
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Initialize everything when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            createPetals();
+            generateReasons();
+            setupScrollAnimations();
+            setupCountdown();
+        });
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
